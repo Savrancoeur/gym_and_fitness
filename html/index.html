@@ -29,6 +29,7 @@
     <body>
         <!-- Start of Navigation Section -->
         <nav
+            id="nav"
             class="navbar navbar-expand-lg navbar-dark py-3 text-uppercase sticky-top shadow-lg"
         >
             <div class="container">
@@ -1172,7 +1173,7 @@
                     <ul>
                         <li>
                             <i class="bi bi-geo-alt-fill text-danger"></i>
-                            No.(124/126), Nga Wah Street, Ahlone Township,
+                            No.(124/126), Ngu Wah Street, Ahlone Township,
                             Yangon, Burma
                         </li>
 
@@ -1237,7 +1238,7 @@
         <!-- End of Copyright Section -->
 
         <!-- Start of Go Top Button -->
-        <a href="#header" id="go_top"
+        <a href="#" id="go_top"
             ><i class="bi bi-arrow-up-square text-light"></i
         ></a>
         <!-- End of Go Top Button -->
@@ -1343,6 +1344,37 @@
         <!-- Initialize AOS -->
         <script>
             AOS.init();
+        </script>
+
+        <!-- offSet JS Part -->
+        <script type="text/javascript">
+            // OffsetY Opacity Part
+
+            let nav = document.getElementById("nav");
+
+            window.onscroll = function () {
+                if (window.pageYOffset > 500) {
+                    nav.classList.add("full_opacity");
+                } else {
+                    nav.classList.remove("full_opacity");
+                }
+            };
+
+            // Show/Hide Password
+
+            let pwd = document.getElementById("pwd"),
+                toggleShowPwd = document.getElementById("hide-show"),
+                toggleIcon = document.getElementById("hide-show");
+
+            toggleShowPwd.onclick = () => {
+                if (pwd.type == "password") {
+                    pwd.type = "text";
+                    toggleIcon.src = "https://svgshare.com/i/dkj.svg";
+                } else {
+                    pwd.type = "password";
+                    toggleIcon.src = "https://svgshare.com/i/dnW.svg";
+                }
+            };
         </script>
     </body>
 </html>
